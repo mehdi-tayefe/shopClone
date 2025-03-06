@@ -6,7 +6,8 @@ import xImg from '../../assets/x.png'
 
 function Footer() {
   return (
-    <div className="w-full h-22 p-10 fixed bottom-20 ">    
+    <div className="w-full h-15 px-10 fixed bottom-20">
+    <div className="w-full h-15 px-10  border-t-2 ">    
        <div className="w-full h-max flex justify-between items-center mb-5">
           <div className="w-max flex justify-start items-center">
               <p className="cursor-pointer mr-7">CONTACT</p>
@@ -21,12 +22,13 @@ function Footer() {
        <div className="w-full flex justify-between items-center">
           <p>© 2021 Shelly. Terms of use and privacy policy.</p>
           <div className="w-max flex justify-start items-center">
-              <img className="mr-7" src={linkdinImg}></img>
-              <img className="mr-7" src={facebookImg}></img>
-              <img className="mr-7" src={instagramImg}></img>
-              <img className="mr-7" src={xImg}></img>
+              <img className="mr-7 cursor-pointer" src={linkdinImg}></img>
+              <img className="mr-7 cursor-pointer" src={facebookImg}></img>
+              <img className="mr-7 cursor-pointer" src={instagramImg}></img>
+              <img className="mr-7 cursor-pointer" src={xImg}></img>
           </div>
        </div>
+    </div>
     </div>
   )
 }
