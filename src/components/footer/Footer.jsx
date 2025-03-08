@@ -6,7 +6,7 @@ import xImg from '../../assets/x.png'
 
 function Footer() {
   return (
-    <div className="w-full h-15 px-10 fixed bottom-20">
+    <div className="w-full h-15 px-10 bottom-20">
     <div className="w-full h-15 px-10  border-t-2 ">    
        <div className="w-full h-max flex justify-between items-center mb-5">
           <div className="w-max flex justify-start items-center">
