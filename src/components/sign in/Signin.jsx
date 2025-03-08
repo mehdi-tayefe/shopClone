@@ -1,6 +1,9 @@
+import { useShopContext } from "../../context/shopContext"
 
 
 function Signin() {
+
+    const {handleSigninButton} =useShopContext() 
     return (
       <div className="w-full h-full p-10 flex justify-center items-center">
         <div className="w-125 h-150 flex flex-col justify-start items-center ">
@@ -9,7 +12,7 @@ function Signin() {
           </div>
           <div className="w-full  h-15 mt-10 bg-gray-200 flex justify-start items-center p-1 rounded-xl">
               <button className="w-1/2 h-full bg-white rounded-2xl">sign in</button>
-              <button className="w-1/2 h-full rounded-2xl">login</button>
+              <button className="w-1/2 h-full rounded-2xl" onClick={handleSigninButton}>login</button>
           </div>
           <div className="w-full h-11 p-1 mt-15 border-b-2 border-b-gray-200">
             <input placeholder="email" className="w-full h-full outline-none "></input>
