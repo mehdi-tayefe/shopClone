@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className="w-full h-11 p-10">
       <div className="w-full h-11 flex  justify-between items-center  top-0  border-b-2">
-        <div><h1 className="font-black text-2xl cursor-pointer">SHOPPE</h1></div>
+        <div><h1 className=" text-gray-300 text-2xl cursor-pointer hover:font-black hover:text-black">SHOPPE</h1></div>
         <div className="w-1/3 flex justify-between items-center">
           <div className="w-1/2 flex justify-evenly items-center ml-10">
             <p className="mr-7 cursor-pointer">shop</p>

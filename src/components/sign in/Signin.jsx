@@ -11,14 +11,14 @@ function Signin() {
               <h2 className="font-light text-xl">My Account</h2>
           </div>
           <div className="w-full  h-15 mt-10 bg-gray-200 flex justify-start items-center p-1 rounded-xl">
-              <button className="w-1/2 h-full bg-white rounded-2xl">sign in</button>
-              <button className="w-1/2 h-full rounded-2xl" onClick={handleSigninButton}>login</button>
+              <button className="w-1/2 h-full bg-white rounded-2xl cursor-pointer">sign in</button>
+              <button className="w-1/2 h-full rounded-2xl cursor-pointer" onClick={handleSigninButton}>login</button>
           </div>
-          <div className="w-full h-11 p-1 mt-15 border-b-2 border-b-gray-200">
-            <input placeholder="email" className="w-full h-full outline-none "></input>
+          <div className="w-full h-11 p-1 mt-15">
+            <input placeholder="email" className="w-full h-full outline-none border-b-2 border-b-gray-200 focus:border-black "></input>
           </div>
-          <div className="w-full h-11 p-1 mt-5 border-b-2 border-b-gray-200">
-            <input placeholder="password" className="w-full h-full outline-none "></input>
+          <div className="w-full h-11 p-1 mt-5  ">
+            <input placeholder="password" className="w-full h-full outline-none border-b-2 border-b-gray-200 focus:border-black"></input>
           </div>
           <div className="w-full h-6 mt-3 flex justify-start items-center">
             <input type="checkbox"></input>

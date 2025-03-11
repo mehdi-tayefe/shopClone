@@ -16,11 +16,11 @@ function Login() {
               <button className="w-1/2 h-full rounded-2xl cursor-pointer" onClick={handleLoginButton}>sign in</button>
               <button className="w-1/2 h-full  bg-white rounded-2xl cursor-pointer">login</button>
           </div>
-          <div className="w-full h-11 p-1 mt-15 border-b-2 border-b-gray-200">
-            <input placeholder="username" className="w-full h-full outline-none "></input>
+          <div className="w-full h-11 p-1 mt-15 ">
+            <input placeholder="username" className="w-full h-full outline-none border-b-2 border-b-gray-200 focus:border-black "></input>
           </div>
-          <div className="w-full h-11 p-1 mt-5 border-b-2 border-b-gray-200">
-            <input placeholder="password" className="w-full h-full outline-none "></input>
+          <div className="w-full h-11 p-1 mt-5">
+            <input placeholder="password" className="w-full h-full outline-none border-b-2 border-b-gray-200 focus:border-black "></input>
           </div>
           <div className="w-full h-6 mt-3 flex justify-start items-center">
             <input type="checkbox"></input>
