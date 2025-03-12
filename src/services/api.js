@@ -12,3 +12,12 @@ export async function userAuth(email , password){
     })
     return data
 }
+
+
+
+export async function createNewUser(email, password, name = "mehdifury", avatar = "https://picsum.photos/800") {
+  const {data} = await client.post("/users",{
+    email , password , name ,avatar
+  })
+  return data
+}
