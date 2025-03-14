@@ -1,9 +1,10 @@
+import ImageSlider from "../../components/image slider/ImageSlider"
 
 
 function Home() {
   return (
     <div>
-      home
+      <ImageSlider />
     </div>
   )
 }
