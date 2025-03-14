@@ -14,7 +14,7 @@ function ProductItem() {
                     <img className="mr-4" src={imgLike}></img>
                 </div>
                 <div className="absolute bottom-0 w-full h-1/5 bg-gray-200/30 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl">
-                    <span className="text-gray-900 font-bold">افزودن به سبد</span>
+                    <span className="text-gray-900 font-bold"> add to cart </span>
                 </div>
             </div>
             <div className="w-full h-7 mt-4 ml-2 flex justify-start items-center"><h3>Lira Earrings</h3></div>

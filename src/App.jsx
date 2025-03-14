@@ -4,6 +4,7 @@ import Store from "./pages/store/Store"
 import Layout from "./components/layout/Layout"
 import Account from "./pages/account/Account"
 import { ShopContextProvider } from "./context/shopContext"
+import NotFound from "./pages/404/NotFound"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/store" element={<Store />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/notfound" element={<NotFound />} />
           </Routes>
         </Layout>
       </ShopContextProvider>
