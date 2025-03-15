@@ -5,6 +5,7 @@ import Layout from "./components/layout/Layout"
 import Account from "./pages/account/Account"
 import { ShopContextProvider } from "./context/shopContext"
 import NotFound from "./pages/404/NotFound"
+import PrivacyPolicy from "./pages/privacy policy/PrivacyPolicy"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/store" element={<Store />} />
             <Route path="/account" element={<Account />} />
             <Route path="/notfound" element={<NotFound />} />
+            <Route path="/Privacy" element={<PrivacyPolicy />} />
           </Routes>
         </Layout>
       </ShopContextProvider>
