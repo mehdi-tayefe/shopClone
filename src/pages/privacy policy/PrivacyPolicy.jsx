@@ -2,7 +2,7 @@
 
 function PrivacyPolicy() {
     return (
-        <div className="w-full h-full flex justify-center items-center">
+        <div className="w-full min-h-dvh flex justify-center items-center">
             <div className="w-170 h-125 flex flex-col justify-start items-center" >
                 <div className="w-full h-max flex  justify-center items-center text-2xl text-black font-bold mt-10">Privacy Policy</div>
                 <div className="w-full h-max flex justify-center items-center text-sm mt-7">

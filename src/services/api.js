@@ -21,3 +21,13 @@ export async function createNewUser(email, password, name = "mehdifury", avatar 
   })
   return data
 }
+
+
+const products = axios.create({
+  baseURL : "https://api.escuelajs.co/api/v1"
+})
+
+export async function getProducts () {
+  const {data} = await products("/products?limit=6&offset=12")
+  return data
+}

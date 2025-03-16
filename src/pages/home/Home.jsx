@@ -1,8 +1,17 @@
+import { useEffect, useState } from "react"
 import ImageSlider from "../../components/image slider/ImageSlider"
 import ProductItem from "../../components/product item/ProductItem"
+import { getProducts } from "../../services/api"
+import { Link } from "react-router-dom"
 
 
 function Home() {
+  const [products, setProducts] = useState([])
+  useEffect(() => {
+    getProducts().then(result => {
+      setProducts(result)
+    }, [])
+  })
   return (
     <div>
       <ImageSlider />
@@ -12,14 +21,14 @@ function Home() {
         <p className="text-gray-400 text-sm cursor-pointer">view all</p>
       </div>
       <div className="w-full h-max px-10 mt-10 grid grid-cols-3 gap-x-40 gap-y-10 mb-15">
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
+
+        {
+          products.map((item) => (
+            <Link key={item.id} to={`/product/${item.id}`}><ProductItem {...item} /></Link>
+          ))
+        }
       </div>
-      
+
     </div>
 
   )
