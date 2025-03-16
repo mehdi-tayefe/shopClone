@@ -11,6 +11,7 @@ function Home() {
     getProducts().then(result => {
       setProducts(result)
     }, [])
+    
   })
   return (
     <div>
@@ -23,8 +24,8 @@ function Home() {
       <div className="w-full h-max px-10 mt-10 grid grid-cols-3 gap-x-40 gap-y-10 mb-15">
 
         {
-          products.map((item) => (
-            <Link key={item.id} to={`/product/${item.id}`}><ProductItem {...item} /></Link>
+          products.slice(0,6).map((item) => (
+            <Link key={item.id} to={`/store/${item.id}`}><ProductItem {...item} /></Link>
           ))
         }
       </div>

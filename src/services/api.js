@@ -28,6 +28,6 @@ const products = axios.create({
 })
 
 export async function getProducts () {
-  const {data} = await products("/products?limit=6&offset=12")
+  const {data} = await products("/products?limit=12&offset=24")
   return data
 }
