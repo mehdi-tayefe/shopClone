@@ -3,6 +3,7 @@ import facebookImg from "../../assets/facebook.png"
 import linkdinImg from "../../assets/linkdin.png"
 import instagramImg from "../../assets/instagram.png"
 import xImg from '../../assets/x.png'
+import { Link } from "react-router-dom"
 
 function Footer() {
   return (
@@ -10,8 +11,8 @@ function Footer() {
       <div className="w-full h-15 px-10  border-t-2  ">
         <div className="w-full h-max flex justify-between items-center mb-5">
           <div className="w-max flex justify-start items-center">
-            <p className="cursor-pointer mr-7">CONTACT</p>
-            <p className="cursor-pointer mr-7">TERMS OF SERVICES</p>
+            <Link to={"/contact"} className="cursor-pointer mr-7">CONTACT</Link>
+            <Link to={"/Privacy"} className="cursor-pointer mr-7">TERMS OF SERVICES</Link>
             <p className="cursor-pointer mr-7">SHIPPING AND RETURNS</p>
           </div>
           <div className="w-max h-11 flex justify-between items-center border-b-2 mb-5">

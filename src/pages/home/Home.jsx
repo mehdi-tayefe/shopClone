@@ -19,7 +19,7 @@ function Home() {
 
       <div className="w-full h-12 mt-8 flex justify-between items-center px-11">
         <h2 className="text-2xl font-bold">Shop The Latest</h2>
-        <p className="text-gray-400 text-sm cursor-pointer">view all</p>
+        <Link to={"/store"} className="text-gray-400 text-sm cursor-pointer">view all</Link>
       </div>
       <div className="w-full h-max px-10 mt-10 grid grid-cols-3 gap-x-40 gap-y-10 mb-15">
 
