@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import {  Pagination, Autoplay } from "swiper/modules";
 
 const images = [
     image1, image2, image3
@@ -18,10 +18,9 @@ export default function ImageSlider() {
         <div className="w-full h-160 px-10 mt-5">
             <div className="w-full h-full">
                 <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
+                    modules={[ Pagination, Autoplay]}
                     spaceBetween={10}
                     slidesPerView={1}
-                    navigation
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 3000 }}
                     className="rounded-lg shadow-lg"
