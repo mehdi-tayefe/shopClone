@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ImageSlider from "../../components/image slider/ImageSlider"
 import ProductItem from "../../components/product item/ProductItem"
 import { getProducts } from "../../services/api"
@@ -7,12 +7,23 @@ import { Link } from "react-router-dom"
 
 function Home() {
   const [products, setProducts] = useState([])
+  const fetched = useRef(false);
+
   useEffect(() => {
-    getProducts().then(result => {
-      setProducts(result)
-    }, [])
-    
-  })
+    if (fetched.current) return;
+    fetched.current = true;
+
+    const fetchProducts = async () => {
+      try {
+        const result = await getProducts();
+        setProducts(result);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
   return (
     <div>
       <ImageSlider />
