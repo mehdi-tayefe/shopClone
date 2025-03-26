@@ -24,7 +24,7 @@ function App() {
             <Route path="/*" element={<NotFound />} />
             <Route path="/Privacy" element={<PrivacyPolicy />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/product" element={<Product />} />
+            <Route path="/store/:id" element={<Product />} />
           </Routes>
         </Layout>
       </ShopContextProvider>

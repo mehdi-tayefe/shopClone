@@ -27,7 +27,13 @@ const products = axios.create({
   baseURL : "https://api.escuelajs.co/api/v1"
 })
 
+
 export async function getProducts () {
   const {data} = await products("/products?limit=12&offset=24")
+  return data
+}
+
+export async function getProduct (id){
+  const {data} = await products(`/products/${id}`)
   return data
 }
