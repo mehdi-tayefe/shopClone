@@ -8,6 +8,7 @@ import NotFound from "./pages/404/NotFound"
 import PrivacyPolicy from "./pages/privacy policy/PrivacyPolicy"
 import ContactUs from "./pages/contact us/ContactUs"
 import ScrollToTop from "./components/scroll to top/ScrollToTop"
+import Product from "./pages/product/Product"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="/*" element={<NotFound />} />
             <Route path="/Privacy" element={<PrivacyPolicy />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/product" element={<Product />} />
           </Routes>
         </Layout>
       </ShopContextProvider>
