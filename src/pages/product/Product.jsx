@@ -57,9 +57,9 @@ function Product() {
                         {isInCart && <div className="w-25 h-15 bg-gray-200 grid grid-cols-3 mr-5">
                             <button onClick={() => handleDecreaseItem(id)} className="flex justify-center items-center cursor-pointer">-</button>
                             <span className="flex justify-center items-center">{getProductQty(id)}</span>
-                            <button onClick={() => {handleIncreaseItem(id)}} className="flex justify-center items-center cursor-pointer">+</button>
+                            <button onClick={() => {handleIncreaseItem(id , product.price)}} className="flex justify-center items-center cursor-pointer">+</button>
                         </div>}
-                        <button onClick={()=>{setIsInCart(true); handleIncreaseItem(id)}} className="w-90 h-15 text-center border-2 rounded-sm cursor-pointer">add to cart</button>
+                        <button onClick={()=>{setIsInCart(true); handleIncreaseItem(id, product.price)}} className="w-90 h-15 text-center border-2 rounded-sm cursor-pointer">add to cart</button>
                     </div>
                     <div className="w-full h-10 mt-10 flex justify-start items-center">
                         <img src={like} alt="" className="w-6 h-6 flex justify-center items-center mr-8 cursor-pointer" />

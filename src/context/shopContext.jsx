@@ -31,13 +31,13 @@ export function ShopContextProvider({ children }) {
     }, [cartItem]);
 
     // cart context 
-    const handleIncreaseItem = (id) => {
+    const handleIncreaseItem = (id,price) => {
         setCartItem((currentItem) => {
             const selectedItem = currentItem.find(item => item.id === id);
             let updatedCart;
 
             if (!selectedItem) {
-                updatedCart = [...currentItem, { id: id, qty: 1 }];
+                updatedCart = [...currentItem, { id: id, qty: 1 , price: price }];
             } else {
                 updatedCart = currentItem.map(item =>
                     item.id === id ? { ...item, qty: item.qty + 1 } : item
@@ -53,15 +53,14 @@ export function ShopContextProvider({ children }) {
         setCartItem((currentItem) => {
             let updatedCart = currentItem
                 .map(item => item.id === id ? { ...item, qty: item.qty - 1 } : item)
-                .filter(item => item.qty > 0); // حذف آیتم‌هایی که تعدادشون صفر میشه
-
+                .filter(item => item.qty > 0);
             localStorage.setItem("cart", JSON.stringify(updatedCart));
             return updatedCart;
         });
     };
 
 
-    
+
     const getProductQty = (id) => {
         return cartItem.find(item => item.id == id)?.qty || 0
     }
@@ -79,6 +78,18 @@ export function ShopContextProvider({ children }) {
 
 
     const totalQty = cartItem.reduce((total, item) => total + item.qty, 0)
+
+
+    const getTotalPrice = () => {
+        return cartItem.reduce((total, item) => {
+          const qty = Number(item.qty);
+          const price = Number(item.price);
+          if (isNaN(qty) || isNaN(price)) {
+            return total;
+          }
+          return total + (qty * price);
+        }, 0);
+      };
     // login context
     const handleLoginButton = () => {
         setIsWantSignin(true)
@@ -101,7 +112,8 @@ export function ShopContextProvider({ children }) {
         getProductQty,
         removeProductItem,
         totalQty,
-        cartItem
+        cartItem,
+        getTotalPrice
     }}>
         {children}
     </shopContext.Provider>

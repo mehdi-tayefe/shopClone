@@ -38,7 +38,7 @@ function ShoppingCartItem({ id, qty }) {
             <div className="w-23 h-13 ml-12 bg-gray-300 grid grid-cols-3">
                 <button onClick={() =>handleDecreaseItem(id)} className="text-center cursor-pointer">-</button>
                 <div className="flex justify-center items-center ">{qty}</div>
-                <button onClick={() =>handleIncreaseItem(id)} className="text-center cursor-pointer">+</button>
+                <button onClick={() =>handleIncreaseItem(id, product.price)} className="text-center cursor-pointer">+</button>
             </div>
             <div className="w-3 h-3 absolute left-186 cursor-pointer">
                 <img src={close} onClick={() =>removeProductItem(id)} className="w-full h-full" />
