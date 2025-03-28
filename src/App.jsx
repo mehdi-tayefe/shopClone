@@ -9,6 +9,7 @@ import PrivacyPolicy from "./pages/privacy policy/PrivacyPolicy"
 import ContactUs from "./pages/contact us/ContactUs"
 import ScrollToTop from "./components/scroll to top/ScrollToTop"
 import Product from "./pages/product/Product"
+import ShoppingCart from "./pages/shopping cart/ShoppingCart"
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/Privacy" element={<PrivacyPolicy />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/store/:id" element={<Product />} />
+            <Route path="/shopping" element={<ShoppingCart />} />
           </Routes>
         </Layout>
       </ShopContextProvider>

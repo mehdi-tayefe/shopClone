@@ -39,6 +39,7 @@ export function ShopContextProvider({children}) {
                 })
             }
         })
+        
     }
 
     const handleDecreaseItem = (id) => {
@@ -86,7 +87,8 @@ export function ShopContextProvider({children}) {
         handleDecreaseItem,
         getProductQty,
         removeProductItem,
-        totalQty
+        totalQty,
+        cartItem
     }}>
         {children}
     </shopContext.Provider>

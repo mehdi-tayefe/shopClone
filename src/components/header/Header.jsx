@@ -17,7 +17,7 @@ function Header() {
           </div>
           <div className="w-1/3 flex justify-start items-center flex-row-reverse">
             <div className="w-10 h-10 flex justify-center items-center ml-5 cursor-pointer"><img src={userImg}></img></div>
-            <div className="w-6 h-6 flex justify-center items-center ml-5 cursor-pointer"><img src={cartImg}></img></div>
+            <Link to={"/shopping"} className="w-6 h-6 flex justify-center items-center ml-5 cursor-pointer"><img src={cartImg}></img></Link>
             <div className="w-10 h-10 flex justify-center items-center ml-5 cursor-pointer"><img src={searchImg}></img></div>
           </div>
         </div>
