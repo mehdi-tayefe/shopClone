@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 
 
@@ -12,68 +12,81 @@ export const shopContext = createContext({})
 
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const useShopContext =() => {
+export const useShopContext = () => {
     return useContext(shopContext)
 }
 
 
-export function ShopContextProvider({children}) {
+export function ShopContextProvider({ children }) {
 
-    const [isWantSignin,setIsWantSignin] = useState(false)
-    const [cartItem , setCartItem] = useState([])
+    const [isWantSignin, setIsWantSignin] = useState(false)
+    const [cartItem, setCartItem] = useState(() => {
+        const savedCart = localStorage.getItem("cart");
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
 
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cartItem));
+    }, [cartItem]);
 
     // cart context 
     const handleIncreaseItem = (id) => {
-        setCartItem((currentItem)=>{
-            const  selecctedItem = currentItem.find(item =>item.id == id )
-            if(selecctedItem == null){
-                return [...currentItem , {id : id , qty : 1}]
+        setCartItem((currentItem) => {
+            const selectedItem = currentItem.find(item => item.id === id);
+            let updatedCart;
+
+            if (!selectedItem) {
+                updatedCart = [...currentItem, { id: id, qty: 1 }];
             } else {
-               return currentItem.map(item =>{
-                  if(item.id == id){
-                    return {...item , qty : item.qty + 1}
-                  }else{
-                    return item
-                  }
-                })
+                updatedCart = currentItem.map(item =>
+                    item.id === id ? { ...item, qty: item.qty + 1 } : item
+                );
             }
-        })
-        
-    }
+
+            localStorage.setItem("cart", JSON.stringify(updatedCart));
+            return updatedCart;
+        });
+    };
 
     const handleDecreaseItem = (id) => {
-        setCartItem(currentItems =>{
-            const selecctedItem = currentItems.find(item => item.id == id)
-            if (selecctedItem?.qty == 1){
-                return currentItems.filter(item => item.id !== id)
-            } else{
-                return currentItems.map(item => {
-                    if(item.id == id){
-                        return {...item , qty : item.qty - 1}
-                    }else{
-                        return item
-                    }
-                })
-            }
-        })
-    }
-    const getProductQty = (id) =>{
-        return cartItem.find(item => item.id == id)?.qty || 0
-     }
- 
-     const removeProductItem = (id) => {
-        setCartItem(currentItem => currentItem.filter(item => item.id != id))
-    }
-    const totalQty = cartItem.reduce((total , item) =>  total + item.qty , 0)
-    // login context
-    const handleLoginButton =() =>{
-        setIsWantSignin(true)
-  
-    }
+        setCartItem((currentItem) => {
+            let updatedCart = currentItem
+                .map(item => item.id === id ? { ...item, qty: item.qty - 1 } : item)
+                .filter(item => item.qty > 0); // حذف آیتم‌هایی که تعدادشون صفر میشه
+
+            localStorage.setItem("cart", JSON.stringify(updatedCart));
+            return updatedCart;
+        });
+    };
+
 
     
-    const handleSigninButton = () =>{
+    const getProductQty = (id) => {
+        return cartItem.find(item => item.id == id)?.qty || 0
+    }
+
+
+
+
+    const removeProductItem = (id) => {
+        setCartItem((currentItem) => {
+            const updatedCart = currentItem.filter(item => item.id !== id);
+            localStorage.setItem("cart", JSON.stringify(updatedCart));
+            return updatedCart;
+        });
+    };
+
+
+    const totalQty = cartItem.reduce((total, item) => total + item.qty, 0)
+    // login context
+    const handleLoginButton = () => {
+        setIsWantSignin(true)
+
+    }
+
+
+    const handleSigninButton = () => {
         setIsWantSignin(false)
     }
 
@@ -92,8 +105,8 @@ export function ShopContextProvider({children}) {
     }}>
         {children}
     </shopContext.Provider>
-} 
+}
 
 ShopContextProvider.propTypes = {
-    children: PropTypes.node.isRequired, 
-  };
+    children: PropTypes.node.isRequired,
+};
