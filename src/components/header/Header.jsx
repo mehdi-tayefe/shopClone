@@ -1,9 +1,21 @@
 import cartImg from "../../assets/cart.png"
 import userImg from "../../assets/user.png"
 import searchImg from "../../assets/search.png"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useShopContext } from "../../context/shopContext"
 
 function Header() {
+  const {isLogin} =useShopContext()
+  const navigate = useNavigate();
+
+
+  const handleUser = ()=>{
+    if (isLogin){ 
+      navigate("/dashboard")
+    } else{
+      navigate("/account")
+    }
+  }
   return (
     <div className="w-full h-11 p-10">
       <div className="w-full h-11 flex  justify-between items-center  top-0  border-b-2 border-gray-200">
@@ -16,7 +28,7 @@ function Header() {
             <Link><span className="cursor-none">|</span></Link>
           </div>
           <div className="w-1/3 flex justify-start items-center flex-row-reverse">
-            <div className="w-10 h-10 flex justify-center items-center ml-5 cursor-pointer"><img src={userImg}></img></div>
+            <div className="w-10 h-10 flex justify-center items-center ml-5 cursor-pointer"><img onClick={handleUser} src={userImg}></img></div>
             <Link to={"/shopping"} className="w-6 h-6 flex justify-center items-center ml-5 cursor-pointer"><img src={cartImg}></img></Link>
             <div className="w-10 h-10 flex justify-center items-center ml-5 cursor-pointer"><img src={searchImg}></img></div>
           </div>
