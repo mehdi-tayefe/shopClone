@@ -1,6 +1,7 @@
 import {  useEffect, useState } from "react"
 import { useShopContext } from "../../context/shopContext"
 import { userAuth } from "../../services/api"
+import { useNavigate } from "react-router-dom"
 
 
 function Login() {
@@ -9,12 +10,14 @@ function Login() {
     const [userName ,setUserName ] = useState("")
     const [password ,setPassword ] = useState("")
     const [error, setError] = useState(null);
+    const navigate = useNavigate()
     async function handleLogin() {
       try {
           const data = await userAuth(userName, password);
           console.log(data);
           setIsLogin(true)
           setError(null) 
+          navigate("/")
       // eslint-disable-next-line no-unused-vars
       } catch (err) {
           setError("Login failed. Please check your credentials.");
