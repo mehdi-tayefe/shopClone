@@ -1,11 +1,11 @@
-import {  useState } from "react"
+import {  useEffect, useState } from "react"
 import { useShopContext } from "../../context/shopContext"
 import { userAuth } from "../../services/api"
 
 
 function Login() {
 
-    const { handleLoginButton} = useShopContext()
+    const { handleLoginButton, setIsLogin ,isLogin} = useShopContext()
     const [userName ,setUserName ] = useState("")
     const [password ,setPassword ] = useState("")
     const [error, setError] = useState(null);
@@ -13,12 +13,17 @@ function Login() {
       try {
           const data = await userAuth(userName, password);
           console.log(data);
+          setIsLogin(true)
           setError(null) 
       // eslint-disable-next-line no-unused-vars
       } catch (err) {
           setError("Login failed. Please check your credentials.");
       }
   }
+
+  useEffect(() =>{
+    console.log(isLogin)
+  },[isLogin])
     return (
       <div className="w-full h-full p-10 flex justify-center items-center">
         <div className="w-125 h-150 flex flex-col justify-start items-center ">
