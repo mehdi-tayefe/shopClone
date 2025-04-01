@@ -20,6 +20,7 @@ export const useShopContext = () => {
 export function ShopContextProvider({ children }) {
 
     const [isWantSignin, setIsWantSignin] = useState(false)
+    const [isLogin , setIsLogin] = useState(false)
     const [cartItem, setCartItem] = useState(() => {
         const savedCart = localStorage.getItem("cart");
         return savedCart ? JSON.parse(savedCart) : [];
@@ -101,7 +102,7 @@ export function ShopContextProvider({ children }) {
         setIsWantSignin(false)
     }
 
-
+    
 
     return <shopContext.Provider value={{
         handleLoginButton,
@@ -113,7 +114,9 @@ export function ShopContextProvider({ children }) {
         removeProductItem,
         totalQty,
         cartItem,
-        getTotalPrice
+        getTotalPrice,
+        isLogin,
+        setIsLogin
     }}>
         {children}
     </shopContext.Provider>
