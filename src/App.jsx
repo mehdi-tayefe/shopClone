@@ -10,6 +10,7 @@ import ContactUs from "./pages/contact us/ContactUs"
 import ScrollToTop from "./components/scroll to top/ScrollToTop"
 import Product from "./pages/product/Product"
 import ShoppingCart from "./pages/shopping cart/ShoppingCart"
+import AccountDetail from "./pages/account/AccountDetail"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/store/:id" element={<Product />} />
             <Route path="/shopping" element={<ShoppingCart />} />
+            <Route path="/dashboard" element={<AccountDetail />} />
           </Routes>
         </Layout>
       </ShopContextProvider>
