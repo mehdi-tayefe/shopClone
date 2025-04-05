@@ -32,11 +32,7 @@ export default function ImageSlider() {
                                 alt={`Slide ${index + 1}`}
                                 className="w-full h-150 object-cover rounded-lg"
                             />
-                            <div className="absolute left-35 bottom-2/5 -translate-x-1/2 bg-black/0  flex-col items-center justify-center">
-                                <h2 className="text-white text-2xl font-bold">Gold Big Hoops</h2>
-                                <p className="text-white text-xl font-bold mt-3">66$</p>
-                                <button className="w-48 h-12  border-2 border-white text-xl text-white text-center mt-10 cursor-pointer rounded-2xl">view product</button>
-                            </div>
+                      
                         </SwiperSlide>
                     ))}
                 </Swiper>
