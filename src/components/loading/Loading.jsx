@@ -2,14 +2,10 @@
 
 function Loading() {
     return (
-        <div className="w-full h-dvh flex justify-start items-start">
-            <span className="loading loading-ball loading-xs"></span>
-            <span className="loading loading-ball loading-sm"></span>
-            <span className="loading loading-ball loading-md"></span>
-            <span className="loading loading-ball loading-lg"></span>
-            <span className="loading loading-ball loading-xl"></span>
+        <div className="flex justify-center items-center h-screen bg-gray-200">
+          <div className="w-16 h-16 border-4 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
         </div>
-    )
+      );
 }
 
 export default Loading
