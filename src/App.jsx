@@ -30,6 +30,8 @@ function App() {
             <Route path="/shopping" element={<ShoppingCart />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
+
+          
         </Layout>
       </ShopContextProvider>
     </>
