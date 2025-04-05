@@ -8,7 +8,8 @@ import { useEffect, useRef, useState } from "react"
 import { getProduct } from "../../services/api"
 import { useParams } from "react-router-dom"
 import { useShopContext } from "../../context/shopContext"
-import Loading from "daisyui/components/loading"
+import Loading from "../../components/loading/Loading"
+
 
 
 

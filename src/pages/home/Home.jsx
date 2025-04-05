@@ -3,7 +3,8 @@ import ImageSlider from "../../components/image slider/ImageSlider"
 import ProductItem from "../../components/product item/ProductItem"
 import { getProducts } from "../../services/api"
 import { Link } from "react-router-dom"
-import Loading from "daisyui/components/loading"
+import Loading from "../../components/loading/Loading"
+
 
 
 function Home() {
