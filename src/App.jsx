@@ -11,6 +11,7 @@ import ScrollToTop from "./components/scroll to top/ScrollToTop"
 import Product from "./pages/product/Product"
 import ShoppingCart from "./pages/shopping cart/ShoppingCart"
 import Dashboard from "./pages/account/Dashboard"
+import PrivateRoute from "./components/private_route/PrivateRoute"
 
 function App() {
 
@@ -28,10 +29,17 @@ function App() {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/store/:id" element={<Product />} />
             <Route path="/shopping" element={<ShoppingCart />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
           </Routes>
 
-          
+
         </Layout>
       </ShopContextProvider>
     </>

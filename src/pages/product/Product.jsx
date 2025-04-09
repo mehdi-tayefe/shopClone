@@ -41,8 +41,8 @@ function Product() {
         fetchProducts();
     }, [id]);
 
-    if (isLoading) {
-        <Loading />
+    if(isLoading) {
+        return <Loading />
     }
     else {
         return (
