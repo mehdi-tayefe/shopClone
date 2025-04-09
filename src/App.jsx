@@ -21,14 +21,14 @@ function App() {
         <Layout>
           <ScrollToTop />
           <Routes>
-            <Route path="/shopClone/" element={<Home />} />
-            <Route path="/shopClone/store" element={<Store />} />
-            <Route path="/shopClone/account" element={<Account />} />
-            <Route path="/shopClone/*" element={<NotFound />} />
-            <Route path="/shopClone/Privacy" element={<PrivacyPolicy />} />
-            <Route path="/shopClone/contact" element={<ContactUs />} />
-            <Route path="/shopClone/store/:id" element={<Product />} />
-            <Route path="/shopClone/shopping" element={<ShoppingCart />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/*" element={<NotFound />} />
+            <Route path="/Privacy" element={<PrivacyPolicy />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/store/:id" element={<Product />} />
+            <Route path="/shopping" element={<ShoppingCart />} />
             <Route
               path="/dashboard"
               element={
