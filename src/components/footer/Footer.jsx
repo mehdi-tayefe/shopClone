@@ -4,13 +4,13 @@ import linkdinImg from "../../assets/linkdin.png"
 import instagramImg from "../../assets/instagram.png"
 import xImg from '../../assets/x.png'
 import { Link } from "react-router-dom"
-
+ // hello
 function Footer() {
   return (
     <div className="w-full h-40 px-10 flex flex-col justify-start items-start border-t-2 border-gray-200">
       <div className="w-full h-max flex justify-between items-center mb-5">
         <div className="w-max h-full flex justify-start items-center">
-          <Link to={"/contact"} className="cursor-pointer mr-7">CONTACT</Link>
+          <Link to={"/contact"} className="cursor-pointer mr-7">CONTACT us</Link>
           <Link to={"/Privacy"} className="cursor-pointer mr-7">TERMS OF SERVICES</Link>
           <p className="cursor-pointer mr-7">SHIPPING AND RETURNS</p>
         </div>
